@@ -1,0 +1,10 @@
+.idea
+.glide/
+.gopath
+build
+bin
+dist
+pkg
+!src/laika/pkg
+secrets
+setEnv.sh

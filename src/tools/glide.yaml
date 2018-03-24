@@ -1,0 +1,13 @@
+package: tools
+import:
+- package: github.com/golang/lint
+  subpackages:
+  - golint
+- package: github.com/tebeka/go2xunit
+  version: ^1.4.8
+- package: github.com/alecthomas/gometalinter
+  version: ^2.0.5
+- package: golang.org/x/tools
+  subpackages:
+  - go/gcexportdata
+- package: golang.org/x/lint

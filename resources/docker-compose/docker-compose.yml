@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  initializer:
+    image: centos:7
+    volumes:
+      - "./initializer/setup.sh:/setup.sh"
+    entrypoint: sh /setup.sh
+    depends_on:
+      - mollydb
+
+  mollydb:
+    image: alpine:3.6
+    volumes:
+      - ./mollydb/config/config.json:/var/mollydb/config/config.json
+      - ./mollydb/data:/var/mollydb/data
+      - ./../../build/mollydb.linux:/usr/local/bin/mollydb
+    ports:
+      - 9000:8080
+    entrypoint: /usr/local/bin/mollydb -config=/var/mollydb/config/config.json
