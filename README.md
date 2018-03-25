@@ -42,6 +42,9 @@ or
  
 
 
+To launch yout queries, just open  [GrapIQL](http://localhost:9090) on your 
+browser
+
 
 ### Docker
 
@@ -61,12 +64,7 @@ the name
 
 ## Endpoints
 
-| Uri | Description |
-| --- | --- |
-| POST /v0/folder:create | Create a new folder |
-| POST /v0/folder:create | Create a new folder |
-| POST /v0/folder:create | Create a new folder |
-| git diff | Show file differences that haven't been staged |
+graphql....
 
 ## Hooks
 
