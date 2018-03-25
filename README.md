@@ -1,8 +1,7 @@
 # MollyDB
 
-MollyDB is a **file system data store** whose information. So far, **json** and 
-**yaml** files are han is stored into the file system. MollyDB access can 
-only be done by Graphql.  
+MollyDB is a **file system data store** whose information. is stored into the 
+file system. MollyDB works exclusively under **Graphql**
 
 ## Purpose
  
