@@ -1,4 +1,47 @@
-hash: 3441bf6ff6d443d7e65fcdfc4f1d1b67e506cee012ed3b4901bbe2aab9890aa9
-updated: 2018-03-24T07:08:25.955879+01:00
-imports: []
-testImports: []
+hash: d4048ffed56044a87001761a64dc0f56d4f67ef66815edf9b7d3a0bea66616ee
+updated: 2018-03-25T08:32:26.193989+02:00
+imports:
+- name: github.com/fsnotify/fsnotify
+  version: c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9
+- name: github.com/go-yaml/yaml
+  version: bec87e4332aede01fb63a4ab299d8af28480cd96
+- name: github.com/graphql-go/graphql
+  version: 8ab5400ff77c3a245feba2f7b7cf0575e877f9ad
+  subpackages:
+  - gqlerrors
+  - language/ast
+  - language/kinds
+  - language/lexer
+  - language/location
+  - language/parser
+  - language/printer
+  - language/source
+  - language/typeInfo
+  - language/visitor
+- name: github.com/graphql-go/handler
+  version: df717460db9a64a5742f04d7fbb347191a862fa0
+- name: github.com/graphql-go/relay
+  version: 54350098cfe5942bc76186efa1f29ca286f6d54d
+- name: golang.org/x/net
+  version: 6078986fec03a1dcc236c34816c71b0e05018fda
+  subpackages:
+  - context
+- name: golang.org/x/sys
+  version: 01acb38716e021ed1fc03a602bdb5838e1358c5e
+  subpackages:
+  - unix
+- name: gopkg.in/yaml.v2
+  version: 7f97868eec74b32b0982dd158a51a446d1da7eb5
+testImports:
+- name: github.com/davecgh/go-spew
+  version: 6d212800a42e8ab5c146b8ace3490ee17e5225f9
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
+  subpackages:
+  - difflib
+- name: github.com/stretchr/testify
+  version: 12b6f73e6084dad08a7c6e575284b177ecafbc71
+  subpackages:
+  - assert

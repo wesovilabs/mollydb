@@ -7,7 +7,8 @@ mollyDB but others like **toml** or **conf** are in the road map.
 ## Purpose
  
 
-    So far, the purpose of mollydb is mainly being used for testing purposes. 
+    So far, the purpose of mollydb is mainly being used for experimental 
+    purposes. 
 
 
 ## Understanding mollyDB
@@ -59,6 +60,13 @@ the name
     
 
 ## Endpoints
+
+| Uri | Description |
+| --- | --- |
+| POST /v0/folder:create | Create a new folder |
+| POST /v0/folder:create | Create a new folder |
+| POST /v0/folder:create | Create a new folder |
+| git diff | Show file differences that haven't been staged |
 
 ## Hooks
 
