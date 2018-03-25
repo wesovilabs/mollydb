@@ -1,8 +1,8 @@
 # MollyDB
 
-MollyDB is a **file system data store** that will provide us with data stored
-in configuration files. So far, **json** and **yaml** files are handled by 
-mollyDB but others like **toml** or **conf** are in the road map.
+MollyDB is a **file system data store** whose information. So far, **json** and 
+**yaml** files are han is stored into the file system. MollyDB access can 
+only be done by Graphql.  
 
 ## Purpose
  
