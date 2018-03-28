@@ -1,5 +1,9 @@
-logLevel: DEBUG
+logLevel: ${settings.default.LOGLEVEL}:DEBUG
 datasource:
   collection: datbase
   name: my-name
-  private: true
+other:
+  demo: a
+
+
+

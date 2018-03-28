@@ -11,13 +11,15 @@ import (
 func main() {
 	println("Launching mollydb")
 	go func() {
-		database.Molly = &database.Storage{
-			Root: &model.Folder{
-				Name:      "root",
-				Documents: make(map[string]*model.Document),
-				Folders:   make(map[string]*model.Folder),
+		storage := &model.Storage{
+			Name:      "root",
+			Path:      config.MollyConfig.Storage.LocalPath,
+			Documents: make(map[string]*model.Document),
+		}
+		database.Molly = &database.Database{
+			StorageDict: map[string]*model.Storage{
+				"root": storage,
 			},
-			Path: config.MollyConfig.Storage.LocalPath,
 		}
 		database.Molly.SetUp()
 		go database.Molly.Watch()
