@@ -1,1 +1,8 @@
-log: DEBUG
+logLevel: DEBUG
+another:
+  pepe: a
+  julian:
+    garcia: 9
+    rodriguez: 10
+  tulipan: 6
+  rosario: 12

@@ -1,9 +1,12 @@
-logLevel: ${settings.default.LOGLEVEL}:DEBUG
+logLevel: "${settings.default.LOGLEVEL}:DEBUG"
 datasource:
-  collection: datbase
-  name: my-name
+  collection: "datbase"
+  name: "my-name"
 other:
-  demo: a
-
+  demo: "aa"
+newValue: hola
+oooo: adios
+a:
+  b: cd
 
 
