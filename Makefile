@@ -129,11 +129,6 @@ docker-publish:  ; @ ## Build Docker images for mollydb version
     docker push $(DOCKER_IMAGE):$(VERSION)
 
 .PHONY: docker-run
-docker-run: | ; @ ## Start all services (Even the components)
-	$(DOCKER_COMPOSE_UP); \
-    $(DOCKER_COMPOSE_LOGS) -f;
-
-.PHONY: docker-run
 docker-run: build; @
 	$(DOCKER_COMPOSE_UP);
 	$(DOCKER_COMPOSE_LOGS) -f mollydb ;

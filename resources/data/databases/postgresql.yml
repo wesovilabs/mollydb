@@ -1,0 +1,6 @@
+database:
+  hostname: pg.wesovilabs.com
+  port: 4667
+  credentials:
+    username: pg_admin
+    password: pg_secret

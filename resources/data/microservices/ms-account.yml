@@ -1,0 +1,6 @@
+self:
+  port: 7001
+  address: 0.0.0.0
+log:
+  level: DEBUG
+database: mollydb://database/mongodb?key=database

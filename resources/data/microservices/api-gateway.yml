@@ -1,0 +1,8 @@
+self:
+  port: 7000
+  address: 0.0.0.0
+log:
+  level: ${mollydb://ms/global?key=log.level}:DEBUG
+services:
+  api-gatewat:
+    address: localhost:7001

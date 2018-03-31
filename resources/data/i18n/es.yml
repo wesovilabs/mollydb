@@ -1,0 +1,4 @@
+errors:
+  error-001: Error no controlado
+  error-002: URL mal formada
+  error-003: Error de validación

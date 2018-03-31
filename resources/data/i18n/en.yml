@@ -1,0 +1,4 @@
+errors:
+  error-001: Unexpected error
+  error-002: Mailformed URL
+  error-003: Validation error
