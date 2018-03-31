@@ -61,7 +61,7 @@ the name
     docker run wesovilabs/mollydb:$MOLLYDB_VERSION
     
 
-## hierarchy
+## Hierarchy
 
 ### Storage
 A storage can be defined as a place where documents are hosted. 
