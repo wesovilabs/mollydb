@@ -1,7 +1,12 @@
 # MollyDB
 
-MollyDB is a **file system data store** whose information. is stored into the 
-file system. MollyDB works exclusively under **Graphql**
+MollyDB is a **configuration file database** that provides a **GraphQL** API.
+
+It permits interacting with configuration files like If they were 
+tables in a relational database system or documents in a document based 
+database.
+
+
 
 ## Links
 
@@ -10,8 +15,6 @@ MollyDB documentation can be found on **Wiki**:
 [Architecture overview](https://github.com/wesovilabs/mollydb/wiki/Architecture-overview)
 
 [Running mollydb](https://github.com/wesovilabs/mollydb/wiki/Running-mollydb)
-
-[Storage Hierarchy](https://github.com/wesovilabs/mollydb/wiki/Storage-hierarchy)
 
 [GraphQL](https://github.com/wesovilabs/mollydb/wiki/GraphQL)
 
