@@ -120,7 +120,9 @@ below body
 
 ## Download executables
 
-    Not avaiblable yet
+- [Mac executable](https://github.com/wesovilabs/mollydb/releases/download/0.0.1-alpha/mollydb.darwin)
+- [Windows executable](https://github.com/wesovilabs/mollydb/releases/download/0.0.1-alpha/mollydb.exe)
+- [Linux executable](https://github.com/wesovilabs/mollydb/releases/download/0.0.1-alpha/mollydb.linux)
 
 ## From the code
 
@@ -153,7 +155,7 @@ docker command
 In order to being able to make use of local directories as storage in the 
 container you will need to mount a volume when running  docker.
  
-*Scenario*: For the below sample we assume you have the path 
+**Scenario**: For the below sample we assume you have the path 
 */var/data/wesovilabs/mollydb* on your local machine and no processes running
  on port 9090
  
