@@ -59,7 +59,11 @@ the name
     export MOLLYDB_VERSION=<version>
     docker pull wesovilabs/mollydb:$MOLLYDB_VERSION
     docker run wesovilabs/mollydb:$MOLLYDB_VERSION
-    
+
+
+## Links
+
+MollyDB documentation can be found on **Wiki**:
 
 [Storage Hierarchy](https://github.com/wesovilabs/mollydb/wiki/Storage-hierarchy)
 
