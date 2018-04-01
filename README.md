@@ -312,7 +312,7 @@ query FindProperties {
 storage by the connection path.  This is an unique value for each property in
  all the mollydb system. The output is a single Property
 
-*Sample**
+*Sample*
 
 **request**
 
@@ -345,7 +345,7 @@ query PropertyPath {
 
 The purpose of this mutation is registering a new storage into mollyDB
 
-*Sample**
+*Sample*
 
 **request**
 ```graphql
