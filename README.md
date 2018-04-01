@@ -18,7 +18,7 @@ MollyDB documentation can be found on **Wiki**:
 
 ## Other
 
-[Changelog](https://github.com/wesovilabs/mollydb/wiki/Changelog)
+[Changelog](https://github.com/wesovilabs/mollydb/wiki/CHANGELOG)
 
 [The road map](https://github.com/wesovilabs/mollydb/wiki/The-road-map)
 
