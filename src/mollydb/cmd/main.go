@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
+	"log"
 	"mollydb/pkg/api"
 	"mollydb/pkg/config"
-	"log"
+	"net/http"
 )
 
 func main() {
@@ -19,8 +19,8 @@ func main() {
 func loadMollyDB() {
 
 	/**
-	for _, s := range config.MollyConfig.Storages {
-		storage:=&model.Storage{
+	for _, s := range config.MollyConfig.StorageList {
+		storage:=&model.StorageList{
 			Name:      s.Name,
 			Path:      s.Path,
 			Documents: make(map[string]*model.Document),
