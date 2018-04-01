@@ -5,11 +5,11 @@ go:
 services:
   - docker
 
-cache:
-  directories:
-  - "$GOPATH/src"
-  - "$GOPATH/pkg"
-  - "$HOME/gopath/src/github.com/$TRAVIS_REPO_SLUG"
+#cache:
+#  directories:
+#  - "$GOPATH/src"
+#  - "$GOPATH/pkg"
+#  - "$HOME/gopath/src/github.com/$TRAVIS_REPO_SLUG"
 
 stages:
   - name: development
