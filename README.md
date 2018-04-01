@@ -62,7 +62,7 @@ For example, a document api-gateway.yml whose content is:
 A clear scenario is showed below
 
 
-![mollydb](assets/architecture-overview.png)
+![mollydb](https://github.com/wesovilabs/mollydb/wiki/assets/architecture-overview.png)
 
 
 ## Registering a storage
@@ -415,7 +415,7 @@ GraphiQL. GraphiQL is deployed in the same port that mollydb. So assuming you
  the browser and play with [GraphiQL](http://localhost:9090/)
  
  
- ![graphiql](assets/graphiql.png)
+ ![graphiql](https://github.com/wesovilabs/mollydb/wiki/assets/graphiql.png)
  
  Below some examples of graphql queries and mutations used to test manually 
  the system:
