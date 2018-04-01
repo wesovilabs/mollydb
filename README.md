@@ -59,7 +59,7 @@ For example, a document api-gateway.yml whose content is:
 
 ### Scenario
 
-A clear scenario is showed below
+A clearer scenario is showed below
 
 
 ![mollydb](https://github.com/wesovilabs/mollydb/wiki/assets/architecture-overview.png)
