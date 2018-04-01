@@ -1,0 +1,6 @@
+{
+  "server": {
+    "address": "0.0.0.0:9090"
+    "graphiql": "/var/mollydb/graphiql"
+  }
+}

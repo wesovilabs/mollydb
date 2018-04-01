@@ -104,6 +104,14 @@ build: ; @ ## Build mollydb executables for linux and darwin
 	GOARCH=amd64 GOOS=linux $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).linux $(PROJECT)/cmd;
 	chmod +x $(DIR_BUILD)/$(PROJECT).linux
 
+.PHONY: build-all
+build-all: ; @ ## Build mollydb executables for all architectures
+	rm -rf $(CURDIR)/$(DIR_BUILD)/*; \
+	GOARCH=amd64 GOOS=linux $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).linux $(PROJECT)/cmd;\
+	chmod +x $(DIR_BUILD)/$(PROJECT).linux; \
+	GOOS=windows GOARCH=386 $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).exe $(PROJECT)/cmd; \
+	GOOS=darwin GOARCH=amd64 $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).darwin $(PROJECT)/cmd;
+
 
 .PHONY: run
 run: ; @ ## Run the application

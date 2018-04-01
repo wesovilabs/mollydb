@@ -74,7 +74,7 @@ Once mollydb is up and running we must proceed to **register a storage** in the
 curl -XPOST http://localhost:9090/graphql \
   -H 'Content-Type: application/graphql' \
   -d 'mutation registerI18nDirectory { register(path:"resources/data/i18n",  
-        name:"i18n"){ name len documents { name } } }' \
+        name:"i18n"){ name len documents { name } } }'
 ```
 
 Once the storage is registered in mollydb, a daemon will be launch 
