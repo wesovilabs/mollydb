@@ -20,17 +20,9 @@ MollyDB documentation can be found on **Wiki**:
 
 [Changelog](https://github.com/wesovilabs/mollydb/wiki/Changelog)
 
-[Road map](https://github.com/wesovilabs/mollydb/wiki/Road-map)
+[The road map](https://github.com/wesovilabs/mollydb/wiki/The-road-map)
 
-## Contributing
-
-[Setting up the environment](https://github.com/wesovilabs/mollydb/wiki/Setting-up-the-environment)
-
-[Issues](https://github.com/wesovilabs/mollydb/wiki/Issues)
-
-[CI](https://github.com/wesovilabs/mollydb/wiki/CI)
-
-[Makefile](https://github.com/wesovilabs/mollydb/wiki/Working-with-makefile)
+[Bugs](https://github.com/wesovilabs/mollydb/wiki/Bugs)
 
 
 
