@@ -120,6 +120,7 @@ below body
 
 ## Download executables
 
+    Not avaiblable yet
 
 ## From the code
 
@@ -145,20 +146,8 @@ below body
 
 Docker images are published as far as a new tag on master branch are created. 
 To get the latest version you can do it by running the below commands
-
-```shell
-    docker pull wesovilabs/mollydb
-    docker run  wesovilabs/mollydb
-```
-
-In case of you prefer make use of a specific version of mollydb you just need
- to set the version: 
-
-```shell
-    export MOLLYDB_VERSION=<version>
-    docker pull wesovilabs/mollydb:$MOLLYDB_VERSION
-    docker run wesovilabs/mollydb:$MOLLYDB_VERSION
-```
+    
+    Not avaiblable yet
 
 # GraphQL
 
