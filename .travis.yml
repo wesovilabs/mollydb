@@ -29,7 +29,7 @@ deploy:
     name: Build $(date +'%d.%m.%Y %R')
     file_glob: true
     file:
-      - build/slack/*
+      - build/*
     on:
       repo: wesovilabs/mollydb
       branch: master
