@@ -22,7 +22,7 @@ MollyDB documentation can be found on **Wiki**:
 
 [The road map](https://github.com/wesovilabs/mollydb/wiki/The-road-map)
 
-[Bugs](https://github.com/wesovilabs/mollydb/wiki/Bugs)
+[Contributing](https://github.com/wesovilabs/mollydb/wiki/Contributing)
 
 
 
