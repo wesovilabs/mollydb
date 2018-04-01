@@ -145,9 +145,19 @@ below body
 ## Docker
 
 Docker images are published as far as a new tag on master branch are created. 
-To get the latest version you can do it by running the below commands
+
+By default mollydb is launched on **port 9090**, so in case of you want to 
+forwarding to a different one you will need to indicate it when running 
+docker command
     
-    Not avaiblable yet
+In order to being able to make use of local directories as storage in the 
+container you will need to mount a volume when running  docker.
+ 
+```bash 
+    docker run -it -p 9090:9090 \
+    -v /var/data/wesovilabs/mollydb:/var/mollydb/data \ 
+    wesovilabs/mollydb:0.0.1-alpha
+```
 
 # GraphQL
 
