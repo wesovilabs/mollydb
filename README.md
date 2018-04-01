@@ -367,6 +367,28 @@ mutation registerI18nDirectory {
 }
 ```
 
+**unRegister(name: String!): String**
+
+The purpose of this mutation is unregister an existing storage from mollyDB
+
+*Sample*
+
+**request**
+```graphql
+mutation unRegisterI18nDirectory {
+  unRegister(name: "i18n")
+}
+```
+
+**response**
+```json
+{
+  "data": {
+    "unRegister": "storage deleted successfully!"
+  }
+}
+```
+
 **propertyRestHook(uri: String! verb: String! path: String!): String**
 
 The purpose of this mutation is hook property and be notified when these have
@@ -415,6 +437,10 @@ mutation registerI18nDirectory {
   register(path: "resources/data/i18n", name: "i18n") {
     name
   }
+}
+
+mutation unRegisterI18nDirectory {
+  unRegister(name: "i18n")
 }
 
 mutation registerDatabaseDirectory {
