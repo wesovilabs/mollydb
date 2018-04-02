@@ -23,20 +23,6 @@ services:
       - mollydb
     entrypoint: go run main.go
 
-  operations:
-    image: golang:1.9
-    container_name: ms-operations
-    volumes:
-      - "./ms-users:/go/src/ms-operations"
-    ports:
-      - 7002:3333
-    working_dir: /go/src/ms-operations
-    depends_on:
-      - mollydb
-    links:
-      - mollydb
-    entrypoint: go run main.go
-
   initializer:
     image: centos:7
     volumes:

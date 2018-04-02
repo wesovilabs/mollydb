@@ -1,3 +1,0 @@
-logLevel: DEBUG
-db:
-  uri: mongodb://mongodb.wesovilabs.com:27017

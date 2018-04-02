@@ -62,6 +62,7 @@ type Property struct {
 }
 
 func setUpConfiguration(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Updating configuration")
 	b, err := ioutil.ReadAll(r.Body)
 	defer r.Body.Close()
 	if err != nil {
@@ -74,6 +75,8 @@ func setUpConfiguration(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	fmt.Printf("Property %v", property)
+	cfg.load([]Property{property})
 	fmt.Println(property)
 }
 
@@ -100,6 +103,11 @@ func (cfg *configuration) load(properties []Property) {
 		switch p.Key {
 		case "logLevel":
 			cfg.logLevel = p.Value
+			lvl, err := logrus.ParseLevel(cfg.logLevel)
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+			logrus.SetLevel(lvl)
 		case "db.connection":
 			cfg.dbURI = p.Value
 		}
