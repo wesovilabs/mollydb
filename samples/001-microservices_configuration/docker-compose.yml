@@ -1,25 +1,48 @@
-version: 3
+version: '3'
+
 services:
-
-  apigw:
-    image: golang:1.9
-    container_name: api-gateway
-
-  operations:
-    image: golang:1.9
-    container_name: ms-operations
-
-  users:
-    image: golang:1.9
-    container_name: ms-users
-
-  history:
-    image: golang:1.9
-    container_name: ms-history
 
   mollydb:
     image: wesovilabs/mollydb:0.0.1-alpha
     volumes:
-      - mollydb/data:/var/mollydb/data
+      - "./mollydb/data:/var/mollydb/storage/ms"
+    ports:
+      - 7000:9090
+
+  users:
+    image: golang:1.9
+    container_name: ms-users
+    volumes:
+      - "./ms-users:/go/src/ms-users"
+    ports:
+      - 7001:3333
+    working_dir: /go/src/ms-users
+    depends_on:
+      - mollydb
+    links:
+      - mollydb
+    entrypoint: go run main.go
+
+  operations:
+    image: golang:1.9
+    container_name: ms-operations
+    volumes:
+      - "./ms-users:/go/src/ms-operations"
+    ports:
+      - 7002:3333
+    working_dir: /go/src/ms-operations
+    depends_on:
+      - mollydb
+    links:
+      - mollydb
+    entrypoint: go run main.go
+
+  initializer:
+    image: centos:7
+    volumes:
+      - "./initializer/setup.sh:/setup.sh"
+    depends_on:
+      - mollydb
+    entrypoint: sh /setup.sh
 
 

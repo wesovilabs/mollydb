@@ -1,0 +1,3 @@
+logLevel: ${ms-common?key=logLevel}!DEBUG
+db:
+  connection: ${ms-common?key=db.uri}/operations
