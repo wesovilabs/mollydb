@@ -1,0 +1,25 @@
+version: 3
+services:
+
+  apigw:
+    image: golang:1.9
+    container_name: api-gateway
+
+  operations:
+    image: golang:1.9
+    container_name: ms-operations
+
+  users:
+    image: golang:1.9
+    container_name: ms-users
+
+  history:
+    image: golang:1.9
+    container_name: ms-history
+
+  mollydb:
+    image: wesovilabs/mollydb:0.0.1-alpha
+    volumes:
+      - mollydb/data:/var/mollydb/data
+
+
