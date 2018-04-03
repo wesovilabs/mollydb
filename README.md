@@ -1,3 +1,5 @@
+[![GoReportCard](https://goreportcard.com/badge/github.com/wesovilabs/mollydb]
+
 MollyDB is a **configuration file database** that provides a **GraphQL** API.
 
 It permits interacting with configuration files like If they were 
