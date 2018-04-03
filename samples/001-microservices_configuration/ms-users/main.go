@@ -38,7 +38,7 @@ func init() {
 		// handle err
 	}
 	defer resp.Body.Close()
-	response := &MollyDBResponse{}
+	response := &mollyDBResponse{}
 	err = json.NewDecoder(resp.Body).Decode(&response)
 	if err != nil {
 		// handle err
@@ -47,15 +47,15 @@ func init() {
 	cfg.load(response.Data.Properties)
 }
 
-type MollyDBResponse struct {
-	Data Data `json:"data"`
+type mollyDBResponse struct {
+	Data data `json:"data"`
 }
 
-type Data struct {
-	Properties []Property `json:"properties"`
+type data struct {
+	Properties []property `json:"properties"`
 }
 
-type Property struct {
+type property struct {
 	Path  string `json:"path"`
 	Key   string `json:"key"`
 	Value string `json:"value"`
@@ -69,14 +69,14 @@ func setUpConfiguration(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	var property Property
+	var property property
 	err = json.Unmarshal(b, &property)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	fmt.Printf("Property %v", property)
-	cfg.load([]Property{property})
+	fmt.Printf("property %v", property)
+	cfg.load([]property{property})
 	fmt.Println(property)
 }
 
@@ -98,7 +98,7 @@ type configuration struct {
 	dbURI    string
 }
 
-func (cfg *configuration) load(properties []Property) {
+func (cfg *configuration) load(properties []property) {
 	for _, p := range properties {
 		switch p.Key {
 		case "logLevel":
@@ -114,7 +114,7 @@ func (cfg *configuration) load(properties []Property) {
 	}
 }
 
-type User struct {
+type user struct {
 	Name string `json:"name"`
 }
 
@@ -127,7 +127,7 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	var user User
+	var user user
 	logrus.Debug("unmarshal request body")
 	err = json.Unmarshal(b, &user)
 	if err != nil {
