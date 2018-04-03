@@ -134,7 +134,7 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	logrus.Infof("establishing connection wtih %s", cfg.dbURI)
+	logrus.Infof("establishing connection with %s", cfg.dbURI)
 	logrus.Infof("user %s was created successfully", user.Name)
 	w.Write([]byte(fmt.Sprintf("user:%s", user.Name)))
 }
