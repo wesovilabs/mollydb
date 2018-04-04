@@ -7,8 +7,7 @@
 mollydb is not stable at all, the API  is in continuous definition and some 
 architecture topics are not closed.
 
-Searching some feedback and being able to learn from it in order to toward the 
-project correctly.
+Learning from provided feedback to toward the project correctly.
 
 # About
 
