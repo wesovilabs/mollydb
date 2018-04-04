@@ -103,6 +103,26 @@ func (db *Database) AddPropertyRestHook(path string, uri string, verb string) {
 
 }
 
+//DeletePropertyRestHook creates a new hook
+func (db *Database) DeletePropertyRestHook(path string, uri string,
+	verb string) {
+	log.Printf("Registering hook on %s ", path)
+	hooks, ok := db.GetPropertyHooks()[path]
+	newHooks := []Hook{}
+	if ok {
+		for _, h := range hooks {
+			if h.Type() == restHook {
+				hRestHook := h.(RestHook)
+				if !(hRestHook.URI == uri && hRestHook.Verb == verb) {
+					newHooks = append(newHooks, h)
+				}
+			}
+		}
+	}
+	db.AddToPropertyHooks(path, newHooks)
+
+}
+
 func load(source string, res interface{}) {
 	content, err := ioutil.ReadFile(source)
 	if err == nil && util.IsYaml(source) {

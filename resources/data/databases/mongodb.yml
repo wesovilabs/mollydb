@@ -1,6 +1,6 @@
 database:
   hostname: mongodb.wesovilabs.com
-  port: 27030
+  port: 27031
   credentials:
     username: root
     password: secret

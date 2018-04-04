@@ -22,7 +22,7 @@ func defineQueries() {
 			" mollyDB system until a Property definition.",
 		Type: &graphql.List{OfType: storageType},
 		Args: map[string]*graphql.ArgumentConfig{
-			"name": {
+			storageName: {
 				Type:         graphql.String,
 				DefaultValue: any,
 				Description: "The name of the storage. " +
@@ -45,7 +45,7 @@ func defineQueries() {
 			" all the mollydb system. The output is a single Property",
 		Type: propertyType,
 		Args: map[string]*graphql.ArgumentConfig{
-			"path": {
+			propertyPath: {
 				Type:        graphql.String,
 				Description: "The path of the property",
 			},

@@ -3,6 +3,13 @@
         -v /tmp/data/mollydb:/var/mollydb/data \
         wesovilabs/mollydb:0.0.1-alpha
 
+# Project Status
+mollydb is not stable at all, the API  is in continuous definition and some 
+architecture topics are not closed.
+
+Searching some feedback and being able to learn from it in order to toward the 
+project correctly.
+
 # About
 
 MollyDB is a **configuration file database** that provides a **GraphQL** API.
@@ -80,8 +87,9 @@ Once mollydb is up and running we must proceed to **register a storage** in the
 ```bash
 curl -XPOST http://localhost:9090/graphql \
   -H 'Content-Type: application/graphql' \
-  -d 'mutation registerI18nDirectory { register(path:"resources/data/i18n",  
-        name:"i18n"){ name len documents { name } } }'
+  -d 'mutation registerI18nDirectory { register
+  (path:"resources/data/databases",  
+        name:"db"){ name len documents { name } } }'
 ```
 
 Once the storage is registered in mollydb, a daemon will be launch 
@@ -103,7 +111,7 @@ supported. Yo will create a hook by setting the **property path** you want
 ```bash
 curl -XPOST http://localhost:9090/graphql \
   -H 'Content-Type: application/graphql' \
-  -d 'mutation databasePortHook { propertyRestHook(uri: 
+  -d 'mutation { addRestHook (uri: 
   "http://localhost:3000/properties/mongodb-port", verb: "PUT", path: 
   "mollydb://db/mongodb?key=database.port") }' 
 ```

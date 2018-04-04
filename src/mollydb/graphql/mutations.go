@@ -10,26 +10,31 @@ import (
 
 var mollyDBMutation *graphql.Object
 
+const (
+	uri     = "uri"
+	argVerb = "verb"
+)
+
 func defineMutation() {
 
-	fieldRegisterStorage := &graphql.Field{
+	registerStorage := &graphql.Field{
 		Type: storageType,
 		Description: "The purpose of this mutation is register new storages" +
 			" into mollyDB",
 		Args: graphql.FieldConfigArgument{
-			"name": &graphql.ArgumentConfig{
+			storageName: &graphql.ArgumentConfig{
 				Type:        graphql.NewNonNull(graphql.String),
 				Description: "The name of the storage",
 			},
-			"path": &graphql.ArgumentConfig{
+			storagePath: &graphql.ArgumentConfig{
 				Type:        graphql.NewNonNull(graphql.String),
 				Description: "The path of the storage",
 			},
 		},
 
 		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-			name, _ := p.Args["name"].(string)
-			path, _ := p.Args["path"].(string)
+			name, _ := p.Args[storageName].(string)
+			path, _ := p.Args[storagePath].(string)
 			if _, err := os.Stat(path); err == nil {
 				storage := &model.Storage{
 					Name:      name,
@@ -43,48 +48,65 @@ func defineMutation() {
 		},
 	}
 
-	fieldUnRegisterStorage := &graphql.Field{
+	unRegisterStorage := &graphql.Field{
 		Type: graphql.String,
 		Description: "The purpose of this mutation is unregister an existing" +
 			" storage from mollyDB",
 		Args: graphql.FieldConfigArgument{
-			"name": &graphql.ArgumentConfig{
+			storageName: &graphql.ArgumentConfig{
 				Type:        graphql.NewNonNull(graphql.String),
 				Description: "The name of the storage",
 			},
 		},
 		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-			name, _ := p.Args["name"].(string)
+			name, _ := p.Args[storageName].(string)
 			delete(database.GetInstance().GetStorageDict(), name)
 			return "storage deleted successfully!", nil
 		},
 	}
 
-	fieldPropertyRestHook := &graphql.Field{
+
+	argsRestHook:= graphql.FieldConfigArgument{
+		uri: &graphql.ArgumentConfig{
+			Type:        graphql.NewNonNull(graphql.String),
+			Description: "The uri of the hook",
+		},
+		argVerb: &graphql.ArgumentConfig{
+			Type:        graphql.NewNonNull(graphql.String),
+			Description: "The argVerb of the hook",
+		},
+		propertyPath: &graphql.ArgumentConfig{
+			Type:        graphql.NewNonNull(graphql.String),
+			Description: "The path of the hooked property",
+		},
+	}
+
+
+		addRestHook := &graphql.Field{
 		Type: graphql.String,
 		Description: "The purpose of this mutation is hook property and be" +
 			" notified when these have changed",
-		Args: graphql.FieldConfigArgument{
-			"uri": &graphql.ArgumentConfig{
-				Type:        graphql.NewNonNull(graphql.String),
-				Description: "The uri of the hook",
-			},
-			"verb": &graphql.ArgumentConfig{
-				Type:        graphql.NewNonNull(graphql.String),
-				Description: "The verb of the hook",
-			},
-			"path": &graphql.ArgumentConfig{
-				Type:        graphql.NewNonNull(graphql.String),
-				Description: "The path of the hooked property",
-			},
-		},
-
+		Args: argsRestHook,
 		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-			uri, _ := p.Args["uri"].(string)
-			verb, _ := p.Args["verb"].(string)
-			path, _ := p.Args["path"].(string)
+			uri := argsToString(uri, p)
+			verb := argsToString(argVerb, p)
+			path := argsToString(propertyPath, p)
 			database.GetInstance().AddPropertyRestHook(path, uri, verb)
 			return "property hooked", nil
+		},
+	}
+
+	deleteRestHook := &graphql.Field{
+		Type: graphql.String,
+		Description: "The purpose of this mutation is deleting an existing" +
+			" hook",
+		Args: argsRestHook,
+		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+			uri := argsToString(uri, p)
+			verb := argsToString(argVerb, p)
+			path := argsToString(propertyPath, p)
+			database.GetInstance().DeletePropertyRestHook(path, uri, verb)
+			return "property hooked was deleted!", nil
 		},
 	}
 
@@ -93,9 +115,11 @@ func defineMutation() {
 		Description: "This permits interact with mollyDB system in order to" +
 			" create a new storage",
 		Fields: graphql.Fields{
-			"register":         fieldRegisterStorage,
-			"unRegister":       fieldUnRegisterStorage,
-			"propertyRestHook": fieldPropertyRestHook,
+			"register":       registerStorage,
+			"unRegister":     unRegisterStorage,
+			"addRestHook":    addRestHook,
+			"deleteRestHook": deleteRestHook,
+
 		},
 	})
 }

@@ -8,3 +8,4 @@ import:
 - package: github.com/graphql-go/relay
 - package: golang.org/x/net/context
 - package: github.com/fsnotify/fsnotify
+- package: github.com/boltdb/bolt

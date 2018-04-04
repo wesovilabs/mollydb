@@ -10,12 +10,15 @@ import (
 const (
 	httpJSON          = "application/json"
 	httpHeaderContent = "Content-type"
+	restHook          = "restHook"
 )
 
 //Hook interface
 type Hook interface {
 	//Launch function to be implemented
 	Launch(path string)
+	//Type returns the hook type
+	Type() string
 }
 
 //RestHook structure
@@ -27,7 +30,7 @@ type RestHook struct {
 }
 
 //Launch function omplementation for RestHooks
-func (wh *RestHook) Launch(path string) {
+func (wh RestHook) Launch(path string) {
 	log.Printf("notifying rest hook on %s %s that property %s has changed ",
 		wh.Verb, wh.URI, path)
 	client := http.Client{}
@@ -43,6 +46,10 @@ func (wh *RestHook) Launch(path string) {
 	client.Do(req)
 }
 
+//Type function
+func (wh RestHook) Type() string {
+	return restHook
+}
 func notify(path string) {
 	hooks, ok := GetInstance().GetPropertyHooks()[path]
 	if ok {
