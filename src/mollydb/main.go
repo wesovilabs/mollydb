@@ -2,8 +2,8 @@ package main
 
 import (
 	"log"
-	"mollydb/pkg/api"
-	"mollydb/pkg/config"
+	"mollydb/api"
+	"mollydb/config"
 	"net/http"
 )
 

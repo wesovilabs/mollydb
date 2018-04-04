@@ -1,4 +1,7 @@
-[![GoReportCard](https://goreportcard.com/badge/github.com/wesovilabs/mollydb]
+    **docker run -it -p 9090:9090 \
+        -v /tmp/data/mollydb:/var/mollydb/data wesovilabs/mollydb:0.0.1-alpha**
+
+# About
 
 MollyDB is a **configuration file database** that provides a **GraphQL** API.
 

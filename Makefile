@@ -101,21 +101,21 @@ endif
 .PHONY: build
 build: ; @ ## Build mollydb executables for linux and darwin
 	rm -rf $(CURDIR)/$(DIR_BUILD)/*; \
-	GOARCH=amd64 GOOS=linux $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).linux $(PROJECT)/cmd;
+	GOARCH=amd64 GOOS=linux $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).linux $(PROJECT);
 	chmod +x $(DIR_BUILD)/$(PROJECT).linux
 
 .PHONY: build-all
 build-all: ; @ ## Build mollydb executables for all architectures
 	rm -rf $(CURDIR)/$(DIR_BUILD)/*; \
-	GOARCH=amd64 GOOS=linux $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).linux $(PROJECT)/cmd;\
+	GOARCH=amd64 GOOS=linux $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).linux $(PROJECT);\
 	chmod +x $(DIR_BUILD)/$(PROJECT).linux; \
-	GOOS=windows GOARCH=386 $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).exe $(PROJECT)/cmd; \
-	GOOS=darwin GOARCH=amd64 $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).darwin $(PROJECT)/cmd;
+	GOOS=windows GOARCH=386 $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).exe $(PROJECT); \
+	GOOS=darwin GOARCH=amd64 $(GOBUILD) -o $(DIR_BUILD)/$(PROJECT).darwin $(PROJECT);
 
 
 .PHONY: run
 run: ; @ ## Run the application
-	$(GORUN) $(LDFLAGS) src/$(PROJECT)/cmd/main.go ${ARGS} -config=$(CURDIR)/resources/config/mollydb.json
+	$(GORUN) $(LDFLAGS) src/$(PROJECT)/main.go ${ARGS} -config=$(CURDIR)/resources/config/mollydb.json
 
 .PHONY: testInt
 testInt: | docker-build ; @ ## Test integration for mollydb module

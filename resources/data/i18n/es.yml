@@ -1,4 +1,8 @@
 errors:
-  error-001: Error no controlado
+  error-001: nada123123
   error-002: URL mal formada
-  error-003: Error de validación
+  error-003: $(errors.a.d.j)
+  a:
+    d:
+      j: 10
+      f: 11
